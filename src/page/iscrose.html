@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .shape{
+            width: 100px;
+            height: 100px;
+            background:green;
+            border: 1px solid black;
+        }
+        .circle{
+            border-radius: 50%;
+        }
+        .red{
+            background: red
+        }
+    </style>
+</head>
+<body>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <div id="app">
+        <!-- <div class="shape " @click="isCircle=!isCircle" :class="divClass"></div>
+        <p>{{isCircle}}</p> -->
+        <div class="shape" :style="{backgroundColor:black}"></div>
+        <input type="text" v-model="color">
+    </div>
+    
+        
+    <script>
+      new Vue({
+          el:"#app",
+          data:{
+                isCircle:false,
+                color:"black"
+
+          },
+          computed:{
+              divClass:function(){
+                  return{
+                      circle:this.isCircle,
+                      red:!this.isCircle
+                  }
+              }
+          }
+      })
+    </script>
+</body>
+</html>
